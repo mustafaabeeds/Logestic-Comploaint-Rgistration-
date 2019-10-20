@@ -1,0 +1,98 @@
+<html>
+  <head>
+
+  <script>
+function VALIDCHECK1()
+{
+    var name = document.forms["RegForm"]["name"];
+    var invref = document.forms["RegForm"]["invref"];
+    var invdate = document.forms["RegForm"]["invdate"];
+    var pname =  document.forms["RegForm"]["pname"];
+    var nature = document.forms["RegForm"]["nature"];
+
+    if (name.value == "")
+    {
+        window.alert("Please enter your name");
+        name.focus();
+        return false;
+    }
+
+    if (invref.value == "")
+    {
+        window.alert("Please enter your Invoice Reference Number");
+        invref.focus();
+        return false;
+    }
+
+    if (invdate.value == "")
+    {
+        window.alert("Please enter your Invoice Date");
+        invdate.focus();
+        return false;
+    }
+
+
+    if (pname.value == "")
+    {
+        window.alert("Please enter your Product Name");
+        pname.focus();
+        return false;
+    }
+
+    if (nature.value == "")
+    {
+        window.alert("Please enter Nature of your Complaint");
+        nature.focus();
+        return false;
+    }
+
+    return true;
+}</script>
+
+     <title>Add a complaint</title>
+     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+
+  <body>
+
+    <div class="container"><br>
+     <center>
+        <h2 style ="background-color:DodgerBlue;">COMPLAINT REGISTERATION FORM</h2>
+      </center>
+    </div>
+
+    <div class=container"><br>
+    <div class="row align-items-center justify-content-center">
+    <div class="col-md-4">
+      <form name="RegForm" form action = "/addcomplain" onsubmit="return VALIDCHECK1()" method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name">
+            <br>
+          <label for="invref">Invoice Reference Number:</label>
+          <input type="number" class="form-control" id="invref" name="invref">
+	    <br>
+	  <label for="invdate">Invoice Date:</label>
+	  <input type="date" class="form-control" id="invdate" name="invdate">
+	    <br>
+        <label for="pname">Product Name:</label>
+	  <input type="text" class="form-control" id="pname" name="pname">
+	   <br>
+	  <label for="nature">Nature of the Complaint:</label>
+	  <input type="text" class="form-control" id="nature" name="nature">
+	</div>
+        <br>
+        <center>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </center>
+      </form>
+      <br>
+    </div>
+    <br>
+    </div>
+    </div>
+  </body>
+  </html>

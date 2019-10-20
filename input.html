@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+function VALIDCHECK()
+{
+    var uniref = document.forms["ViewForm"]["uniref"];
+
+    if (uniref.value == "")
+    {
+        window.alert("Please enter your Unique Reference Number");
+        uniref.focus();
+        return false;
+    }
+
+    return true;
+}</script>
+
+
+
+  <!-- Bootstrap CSS -->
+  <title>Viewing your Complaint</title>
+     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 </head>
+<body>
+
+ <div class="container"><br>
+      <center>
+        <h2>Viewing Registered Complaint Information</h2>
+      </center>
+    </div>
+
+ <div class=container"><br>
+    <div class="row align-items-center justify-content-center">
+    <div class="col-md-4">
+      <form name="ViewForm" form action = "/output_id" onsubmit="return VALIDCHECK()" method="POST">
+        <div class="form-group">
+          <label for="uniref">Enter Unique Reference Number:</label>
+          <input type="number" class="form-control" id="uniref" name="uniref">
+            <br>
+			</div>
+        <br>
+        <center>
+          <button type="submit" class="btn btn-success">SUBMIT</button>
+        </center>
+      </form>
+      <br>
+    </div>
+    <br>
+    </div>
+    </div>
+
+
+</body>
+</html>
